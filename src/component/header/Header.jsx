@@ -1,4 +1,5 @@
 import React from "react";
+import { UploadModal } from "../common/Modals";
 
 // material
 import AppBar from "@material-ui/core/AppBar";
@@ -9,17 +10,26 @@ import IconButton from "@material-ui/core/IconButton";
 import PhotoCamera from "@material-ui/icons/PhotoCameraOutlined";
 import Favorite from "@material-ui/icons/FavoriteBorderOutlined";
 import Account from "@material-ui/icons/AccountCircleOutlined";
-
 // styled component
 import { Title, RightIcon } from "../styled";
 
-const Header = () => {
+const Header = props => {
+  const { handlePhoto, handleModal, handleAddPhoto } = props;
   return (
     <div>
+      <UploadModal handleAddPhoto={handleAddPhoto} />
       <AppBar position="static" color="default">
         <Toolbar>
-          <IconButton>
+          <IconButton onClick={handleModal("upload", true)}>
+            {/* <label htmlFor="photoUpload"> */}
             <PhotoCamera />
+            {/* </label> */}
+            {/* <input
+              type="file"
+              id="photoUpload"
+              style={{ display: "none" }}
+              onChange={handlePhoto}
+            /> */}
           </IconButton>
           <Typography variant="h6" color="inherit" noWrap>
             <Title>Weathergram</Title>

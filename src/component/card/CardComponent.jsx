@@ -14,9 +14,8 @@ import MoreHoriz from "@material-ui/icons/MoreHorizOutlined";
 
 import { CardImg } from "../styled";
 
-import Test from "../../test.png";
-
-const CardComponent = () => {
+const CardComponent = props => {
+  const { photoList } = props;
   return (
     <Card style={{ minWidth: "65%" }}>
       <CardHeader
@@ -27,13 +26,13 @@ const CardComponent = () => {
           </IconButton>
         }
         title="Kang"
-        subheader="September 14, 2016"
+        subheader={photoList.photo_time}
       />
       {/* <CardMedia image="%PUBLIC_URL%/test.png" title="Paella dish" /> */}
-      <CardImg src={Test} />
+      <CardImg src={photoList.photo_binary} />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          #Seoul #LA
+          {photoList.photo_location}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

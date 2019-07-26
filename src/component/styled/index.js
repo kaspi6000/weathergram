@@ -14,11 +14,18 @@ const MainDiv = Styled.div`
   display: flex;
   justify-content: center;
   margin: 3% 5%;
+  flex-wrap: wrap;
 `;
 
 const CardImg = Styled.img`
   width: 100%;
-  height: 78%;
+  height: 100%;
 `;
 
-export { Title, RightIcon, MainDiv, CardImg };
+const LoginDiv = Styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30%;
+`;
+
+export { Title, RightIcon, MainDiv, CardImg, LoginDiv };
